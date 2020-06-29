@@ -66,6 +66,8 @@ El resultado de este analisis se presenta de la siguiente forma:
     "ConclusionOfAnalysis": "Invalid DNA sample. N must be the number of sequences and characters into all sequences. No nxn array to analyze."
 }
 
+### Observación: Solo las secuencias validas de adn seran analizadas y por ende almacenas en el historico.
+
 ## Diseño
 
 El diseño técnico del proyecto corresponde a un modelo de 3-capas: Servicios, Negocio y Datos. Las unidades de datos existentes entre capas corresponden a entidades, modelos y DTO's. Los criterios de diseños se priorizaron en el siguiente orden: escalabilidad de la solución, consistencia y rendimiento.
