@@ -14,9 +14,11 @@ String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
 El desafio consta de tres niveles
 
 Nivel 1:
+
 Programa (en cualquier lenguaje de programación) que cumpla con el método pedido por Magneto.
 
 Nivel 2:
+
 Crear una API REST, hostear esa API en un cloud computing libre (Google App Engine, Amazon AWS, etc), crear el servicio “/mutant/” en donde se pueda detectar si un humano es
 mutante enviando la secuencia de ADN mediante un HTTP POST con un Json el cual tenga el siguiente formato:
 POST → /mutant/
@@ -27,6 +29,7 @@ En caso de verificar un mutante, debería devolver un HTTP 200-OK, en caso contr
 
 
 Nivel 3:
+
 Anexar una base de datos, la cual guarde los ADN’s verificados con la API. Solo 1 registro por ADN.
 Exponer un servicio extra “/stats” que devuelva un Json con las estadísticas de las verificaciones de ADN: {“count_mutant_dna”:40, “count_human_dna”:100: “ratio”:0.4}
 Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (Entre 100 y 1 millón de peticiones por segundo).
@@ -35,12 +38,15 @@ Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (En
 API REST URI'S:
 
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/mutant
+
 GET:  https://brainservicesapi20200629110951.azurewebsites.net/api/stats
 
-Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del analisis de la secuencia de ADN.
+Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del análisis de la secuencia de ADN.
+
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/laboratory
 
-El resultado de este analisis se presenta de la siguiente forma:
+El resultado de este análisis se presenta de la siguiente forma:
+
 {
     "IsMutant": true,
     "MutantSequences": [
@@ -63,13 +69,18 @@ El resultado de este analisis se presenta de la siguiente forma:
     "ConclusionOfAnalysis": "Invalid DNA sample. N must be the number of sequences and characters into all sequences. No nxn array to analyze."
 }
 
+#### Observación:
+
+* Solo las secuencias validas de adn serán analizadas y por ende almacenas en el histórico.
+* Las peticiones solicitadas al recurso **/api/laboratory**  serán tenidas en cuenta dentro del histórico de análisis. 
+
 ## Diseño
 
 El diseño técnico del proyecto corresponde a un modelo de 3-capas: Servicios, Negocio y Datos. Las unidades de datos existentes entre capas corresponden a entidades, modelos y DTO's. Los criterios de diseños se priorizaron en el siguiente orden: escalabilidad de la solución, consistencia y rendimiento.
 
-Las validaciones previas al analisis de la secuencia de ADN garantizan no procesar: secuencias nulas, secuencias con caracteres invalidos, secuencias incompletas o formatos invalidos. La solución es non-sensitive.
+Las validaciones previas al análisis de la secuencia de ADN garantizan no procesar: secuencias nulas, secuencias con caracteres inválidos, secuencias incompletas o formatos inválidos. La solución es non-sensitive.
 
-Para la logica de negocio, se manejaron dos componentes: Mutant y Laboratory. Muntant tiene la logica necesaria para identificar genes mutantes y laboratory para gestionar el resultado de los analisis. A nivel de DAL, solo fue necesario crear el componente de Laboratory.
+Para la logica de negocio, se manejaron dos componentes: Mutant y Laboratory. Muntant tiene la logica necesaria para identificar genes mutantes y laboratory para gestionar el resultado de los análisis. A nivel de DAL, solo fue necesario crear el componente de Laboratory.
 
 ## Tecnología
 La solución se ha construido utilizando:
@@ -81,9 +92,10 @@ API Rest 2.1,
 Microsoft Azure Services,
 SQL Server 13.0
 
-¿Por que se decidió utilizar tecnologias microsoft? R:/ Por velocidad de desarrollo.
+¿Por qué se decidió utilizar tecnologías microsoft? R:/ Por velocidad de desarrollo.
 
 ## Posibles mejoras
 * Implementar un logger para registrar y monitorear eventos.
-* Implementar ax. de infraestructura para alto volumen de trafico.
+* Realizar pruebas de cargar para monitorizar el comportamiento del rest api.
+* Implementar ax. de infraestructura para alto volumen de tráfico.
 * Generar documentación técnica diagramas de componentes, clases y distribución.
