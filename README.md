@@ -35,9 +35,11 @@ Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (En
 API REST URI'S:
 
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/mutant
+
 GET:  https://brainservicesapi20200629110951.azurewebsites.net/api/stats
 
 Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del analisis de la secuencia de ADN.
+
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/laboratory
 
 El resultado de este analisis se presenta de la siguiente forma:
@@ -85,5 +87,6 @@ SQL Server 13.0
 
 ## Posibles mejoras
 * Implementar un logger para registrar y monitorear eventos.
+* Realizar pruebas de cargar para monitorizar el comportamiento del rest api.
 * Implementar ax. de infraestructura para alto volumen de trafico.
 * Generar documentación técnica diagramas de componentes, clases y distribución.
