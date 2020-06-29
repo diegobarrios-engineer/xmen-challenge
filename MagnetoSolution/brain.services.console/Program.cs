@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using brain.business.mutant;
 using brain.models.mutant.Mutant;
 
@@ -9,6 +10,12 @@ namespace brain.services.console
     {
         static void Main(string[] args)
         {
+            Task t = MainAsync(args);
+            t.Wait();
+        }
+
+        static async Task MainAsync(string[] args)
+        {
             //Mutant - { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };
 
             string[] dnaSequence = { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };
@@ -17,7 +24,7 @@ namespace brain.services.console
             Console.WriteLine("Analyzing this DNA sequence to look for mutant genes:");
             Console.WriteLine(string.Join(", ", dnaSequence));
 
-            MutantModel mutant = (MutantModel) new MutantBusiness().IsMutant(dnaSequence);
+            MutantModel mutant = (MutantModel) await new MutantBusiness().IsMutant(dnaSequence);
             Console.WriteLine("\nIs mutant? " + mutant.IsMutant.ToString());
             Console.WriteLine("\nConclusion of Analysis? \n" + mutant.ConclusionOfAnalysis);
 
@@ -29,7 +36,7 @@ namespace brain.services.console
                     Console.WriteLine(s.ToString());
                 }
             }
-
+            
             Console.ReadLine();
         }
     }

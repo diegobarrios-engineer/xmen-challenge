@@ -26,7 +26,7 @@ namespace brain.services.API.Controllers
             {
                 string[] dnaSequence = requestModel.dna;
                 MutantResponseDTO responseDTO = new MutantResponseDTO();
-                MutantModel mutant = (MutantModel)new MutantBusiness().IsMutant(dnaSequence);
+                MutantModel mutant = (MutantModel) await new MutantBusiness().IsMutant(dnaSequence);
 
                 if (mutant != null)
                 {

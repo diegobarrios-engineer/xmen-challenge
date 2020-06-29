@@ -6,6 +6,8 @@ using brain.business.mutant.DNA;
 using brain.business.mutant.Utility;
 using brain.models.mutant.Mutant;
 using brain.business.mutant.Mutant;
+using brain.data.DAL;
+using System.Threading.Tasks;
 
 namespace brain.business.mutant
 {
@@ -26,7 +28,7 @@ namespace brain.business.mutant
         }
 
         //this method look for mutation
-        public MutantModel IsMutant(string[] prmDna)
+        public async Task<MutantModel> IsMutant(string[] prmDna)
         {
             DnaBusiness DnaValidator = new DnaBusiness();
             MutantModel mutantModel = new MutantModel();
@@ -74,13 +76,16 @@ namespace brain.business.mutant
                 }
                 
                 mutantModel.ConclusionOfAnalysis = mutantModel.IsMutant ? Resource.MessageResource.MutantFounded : Resource.MessageResource.MutantNotFounded;
-                return mutantModel;
             }
             else 
             {
                 mutantModel.ConclusionOfAnalysis = isDnaSampleValid.Value;
-                return mutantModel;
             }
+
+            AnalysisLogDAL dal = new AnalysisLogDAL();
+            await dal.AnalysisLogAdd(prmDna, mutantModel.IsMutant);
+
+            return mutantModel;
         }
     }
 }

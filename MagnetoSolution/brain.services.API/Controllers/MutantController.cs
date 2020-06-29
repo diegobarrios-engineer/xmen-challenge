@@ -39,7 +39,7 @@ namespace brain.services.API.Controllers
             try
             {
                 string[] dnaSequence = requestModel.dna;
-                MutantModel mutant = (MutantModel) new MutantBusiness().IsMutant(dnaSequence);
+                MutantModel mutant = (MutantModel) await new MutantBusiness().IsMutant(dnaSequence);
 
                 if (mutant != null && mutant.IsMutant)
                 {
