@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{06A94917-C63C-4420-AC76-504EB77415C5}</ProjectGuid>
+    <ProjectGuid>{6C37CD49-5372-4FDD-9C99-C49102350195}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>brain.business.mutant</RootNamespace>
-    <AssemblyName>brain.business.mutant</AssemblyName>
+    <RootNamespace>brain.dto.mutant</RootNamespace>
+    <AssemblyName>brain.dto.mutant</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,29 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dna\DnaBusiness.cs" />
-    <Compile Include="Dna\DnaInterface.cs" />
-    <Compile Include="Mutant\MutantBusiness.cs" />
-    <Compile Include="Mutant\MutantInterface.cs" />
+    <Compile Include="Request\MutantRequestDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource\MessageResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MessageResource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Utility\Array2nUtility.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resource\MessageResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MessageResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\brain.models.mutant\brain.models.mutant.csproj">
-      <Project>{FFCE3EFC-186A-4ED2-958A-69BEE44A76B6}</Project>
-      <Name>brain.models.mutant</Name>
-    </ProjectReference>
+    <Compile Include="Response\MutantResponseDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

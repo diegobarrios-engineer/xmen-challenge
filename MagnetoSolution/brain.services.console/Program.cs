@@ -21,10 +21,10 @@ namespace brain.services.console
             Console.WriteLine("\nIs mutant? " + mutant.IsMutant.ToString());
             Console.WriteLine("\nConclusion of Analysis? \n" + mutant.ConclusionOfAnalysis);
 
-            if (mutant.IsMutant && mutant.MutantGenes != null && mutant.MutantGenes.Any())
+            if (mutant.IsMutant && mutant.MutantSequences != null && mutant.MutantSequences.Any())
             {
                 Console.WriteLine("\nMutant sequences:");
-                foreach (string s in mutant.MutantGenes)
+                foreach (string s in mutant.MutantSequences)
                 {
                     Console.WriteLine(s.ToString());
                 }

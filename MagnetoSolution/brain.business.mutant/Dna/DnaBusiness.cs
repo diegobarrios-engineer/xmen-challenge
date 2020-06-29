@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
+using brain.business.mutant.Dna;
 
 namespace brain.business.mutant.DNA
 {
-    public class DnaBusiness
+    public class DnaBusiness: DnaInterface
     {
         //checking if the sequence is a valid DNA sample
         public KeyValuePair<bool, string> IsDnaSampleValid(string[] prmDna)

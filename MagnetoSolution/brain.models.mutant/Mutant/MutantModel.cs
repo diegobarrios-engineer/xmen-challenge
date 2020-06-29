@@ -8,9 +8,9 @@ namespace brain.models.mutant.Mutant
     {
         public MutantModel()
         {
-            MutantGenes = new List<string>();
+            MutantSequences = new List<string>();
         }
 
-        public List<string> MutantGenes { get; set; }
+        public List<string> MutantSequences { get; set; }
     }
 }

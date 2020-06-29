@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+
 using brain.business.mutant.DNA;
 using brain.business.mutant.Utility;
-using brain.models.mutant.Abstract;
 using brain.models.mutant.Mutant;
+using brain.business.mutant.Mutant;
 
 namespace brain.business.mutant
 {
-    public class MutantBusiness
+    public class MutantBusiness: MutantInterface
     {
         public MutantBusiness()
         { 
@@ -45,11 +46,11 @@ namespace brain.business.mutant
 
                 if (IsMutantGen(diagonals[0]))
                 {
-                    mutantModel.MutantGenes.Add(diagonals[0]);
+                    mutantModel.MutantSequences.Add(diagonals[0]);
                 }
                 if (IsMutantGen(diagonals[1]))
                 {
-                    mutantModel.MutantGenes.Add(diagonals[1]);
+                    mutantModel.MutantSequences.Add(diagonals[1]);
                 }
 
                 for (int r = 0; r < n; r++)
@@ -59,13 +60,13 @@ namespace brain.business.mutant
 
                     if (IsMutantGen(rowWord))
                     {
-                        mutantModel.MutantGenes.Add(rowWord);
+                        mutantModel.MutantSequences.Add(rowWord);
                     }
                     if (IsMutantGen(colWord))
                     {
-                        mutantModel.MutantGenes.Add(colWord);
+                        mutantModel.MutantSequences.Add(colWord);
                     }
-                    if (mutantModel.MutantGenes.Count >= numberOfGenForMutation)
+                    if (mutantModel.MutantSequences.Count >= numberOfGenForMutation)
                     {
                         mutantModel.IsMutant = true;
                         break;

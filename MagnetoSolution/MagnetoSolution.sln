@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brain.models.mutant", "brai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brain.business.mutant", "brain.business.mutant\brain.business.mutant.csproj", "{06A94917-C63C-4420-AC76-504EB77415C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brain.services.API", "brain.services.API\brain.services.API.csproj", "{3CF30D03-01E4-4188-8604-8413F896D690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "brain.dto.mutant", "brain.dto.mutant\brain.dto.mutant.csproj", "{6C37CD49-5372-4FDD-9C99-C49102350195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{06A94917-C63C-4420-AC76-504EB77415C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06A94917-C63C-4420-AC76-504EB77415C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06A94917-C63C-4420-AC76-504EB77415C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF30D03-01E4-4188-8604-8413F896D690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF30D03-01E4-4188-8604-8413F896D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF30D03-01E4-4188-8604-8413F896D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF30D03-01E4-4188-8604-8413F896D690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C37CD49-5372-4FDD-9C99-C49102350195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C37CD49-5372-4FDD-9C99-C49102350195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C37CD49-5372-4FDD-9C99-C49102350195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C37CD49-5372-4FDD-9C99-C49102350195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +53,8 @@ Global
 		{20E47878-8F1F-4FA6-8EC3-1CD46E62F717} = {490278C8-14BB-486E-A761-3B2B60BEC6FD}
 		{FFCE3EFC-186A-4ED2-958A-69BEE44A76B6} = {85BD30C1-45BD-4E75-B7DD-3FF6433E2F5B}
 		{06A94917-C63C-4420-AC76-504EB77415C5} = {BFF85FF2-DD56-4869-BDDA-DB0AFA5DE007}
+		{3CF30D03-01E4-4188-8604-8413F896D690} = {490278C8-14BB-486E-A761-3B2B60BEC6FD}
+		{6C37CD49-5372-4FDD-9C99-C49102350195} = {85BD30C1-45BD-4E75-B7DD-3FF6433E2F5B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {33006F01-74CA-4682-84AC-C58229ED8808}
