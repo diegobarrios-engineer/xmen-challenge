@@ -72,8 +72,7 @@ El resultado de este análisis se presenta de la siguiente forma:
 #### Observación:
 
 * Solo las secuencias validas de adn serán analizadas y por ende almacenas en el histórico.
-
-* Las peticiones solicitadas al recurso **/api/laboratory** no serán tenidas en cuenta dentro del histórico de análisis . El proposito de este servicio es para proporcionar más información si hay dudas sobre el análisis  de una secuencia en especifico. 
+* Las peticiones solicitadas al recurso **/api/laboratory**  serán tenidas en cuenta dentro del histórico de análisis. 
 
 ## Diseño
 
