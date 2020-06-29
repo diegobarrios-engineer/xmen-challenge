@@ -49,10 +49,10 @@ Las validaciones previas al analisis de la secuencia de ADN garantizan no proces
 La solución se ha construido utilizando:
 
 c#
-.Net Framework 4.7.2
-Entity Framework 6.0
-API Rest 2.1
-Microsoft Azure Services
+.Net Framework 4.7.2,
+Entity Framework 6.0,
+API Rest 2.1,
+Microsoft Azure Services,
 SQL Server 13.0
 
 ¿Por que se decidió utilizar tecnologias microsoft? R:/ Por velocidad de desarrollo.
