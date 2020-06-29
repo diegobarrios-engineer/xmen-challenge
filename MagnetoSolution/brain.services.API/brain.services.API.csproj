@@ -103,6 +103,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\brainservicesAPI20200629032055 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\brainservicesAPI20200629110951 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

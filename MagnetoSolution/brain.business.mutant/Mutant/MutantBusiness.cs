@@ -74,17 +74,16 @@ namespace brain.business.mutant
                         break;
                     }
                 }
-                
+
+                AnalysisLogDAL dal = new AnalysisLogDAL();
+                await dal.AnalysisLogAdd(prmDna, mutantModel.IsMutant);
+
                 mutantModel.ConclusionOfAnalysis = mutantModel.IsMutant ? Resource.MessageResource.MutantFounded : Resource.MessageResource.MutantNotFounded;
             }
             else 
             {
                 mutantModel.ConclusionOfAnalysis = isDnaSampleValid.Value;
             }
-
-            AnalysisLogDAL dal = new AnalysisLogDAL();
-            await dal.AnalysisLogAdd(prmDna, mutantModel.IsMutant);
-
             return mutantModel;
         }
     }

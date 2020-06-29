@@ -17,7 +17,9 @@ namespace brain.business.laboratory
                 AnalysisLogDAL dal = new AnalysisLogDAL();
                 statiscal.MutantNumber = await dal.AnalysisLogCount(SubjectType.Mutant);
                 statiscal.HumanNumber = await dal.AnalysisLogCount(SubjectType.NoMutant);
-                statiscal.Ratio = statiscal.MutantNumber / (statiscal.HumanNumber > 0 ? statiscal.HumanNumber : statiscal.MutantNumber);
+
+                statiscal.Ratio = statiscal.HumanNumber > 0 ? (decimal)((double) statiscal.MutantNumber/ (double)statiscal.HumanNumber)
+                    : statiscal.MutantNumber;
             }
             catch (Exception e)
             {
