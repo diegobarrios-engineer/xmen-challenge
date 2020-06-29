@@ -32,11 +32,31 @@ Exponer un servicio extra “/stats” que devuelva un Json con las estadística
 Tener en cuenta que la API puede recibir fluctuaciones agresivas de tráfico (Entre 100 y 1 millón de peticiones por segundo).
 
 ## Entregables
+API REST URI'S:
+
+
+Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del analisis de la secuencia de ADN.
+
 
 ## Diseño
 
+El diseño técnico del proyecto corresponde a un modelo de 3-capas: Servicios, Negocio y Datos.Las unidades de datos existentes entre capas corresponden a entidades, modelos y DTO's. Los criterios de diseños se priorizaron en el siguiente orden: escalabilidad de la solución, consistencia y rendimiento.
+
+Las validaciones previas al analisis de la secuencia de ADN garantizan no procesar: secuencias nulas, secuencias con caracteres invalidos, secuencias incompletas o formatos invalidos. La solución es non-sensitive.
+
+
 ## Tecnología
+La solución se ha construido utilizando:
 
-## Evidencias
+c#
+.Net Framework 4.7.2
+Entity Framework 6.0
+API Rest 2.1
+Microsoft Azure Services
+SQL Server 13.0
 
-## Mejoras
+¿Por que se decidió utilizar tecnologias microsoft? R:/ Por velocidad de desarrollo.
+
+## Posibles mejoras
+* Implementar un logger para registrar y monitorear eventos.
+* Diseñar arquitectura de infraestructura para alto volumen de trafico.
