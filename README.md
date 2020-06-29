@@ -38,11 +38,11 @@ POST: https://brainservicesapi20200629110951.azurewebsites.net/api/mutant
 
 GET:  https://brainservicesapi20200629110951.azurewebsites.net/api/stats
 
-Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del analisis de la secuencia de ADN.
+Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del análisis de la secuencia de ADN.
 
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/laboratory
 
-El resultado de este analisis se presenta de la siguiente forma:
+El resultado de este análisis se presenta de la siguiente forma:
 
 {
     "IsMutant": true,
@@ -66,15 +66,19 @@ El resultado de este analisis se presenta de la siguiente forma:
     "ConclusionOfAnalysis": "Invalid DNA sample. N must be the number of sequences and characters into all sequences. No nxn array to analyze."
 }
 
-### Observación: Solo las secuencias validas de adn seran analizadas y por ende almacenas en el historico.
+#### Observación:
+
+* Solo las secuencias validas de adn serán analizadas y por ende almacenas en el histórico.
+
+* Las peticiones solicitadas al recurso **/api/laboratory** no serán tenidas en cuenta dentro del histórico de análisis . El proposito de este servicio es para proporcionar más información si hay dudas sobre el análisis  de una secuencia en especifico. 
 
 ## Diseño
 
 El diseño técnico del proyecto corresponde a un modelo de 3-capas: Servicios, Negocio y Datos. Las unidades de datos existentes entre capas corresponden a entidades, modelos y DTO's. Los criterios de diseños se priorizaron en el siguiente orden: escalabilidad de la solución, consistencia y rendimiento.
 
-Las validaciones previas al analisis de la secuencia de ADN garantizan no procesar: secuencias nulas, secuencias con caracteres invalidos, secuencias incompletas o formatos invalidos. La solución es non-sensitive.
+Las validaciones previas al análisis de la secuencia de ADN garantizan no procesar: secuencias nulas, secuencias con caracteres inválidos, secuencias incompletas o formatos inválidos. La solución es non-sensitive.
 
-Para la logica de negocio, se manejaron dos componentes: Mutant y Laboratory. Muntant tiene la logica necesaria para identificar genes mutantes y laboratory para gestionar el resultado de los analisis. A nivel de DAL, solo fue necesario crear el componente de Laboratory.
+Para la logica de negocio, se manejaron dos componentes: Mutant y Laboratory. Muntant tiene la logica necesaria para identificar genes mutantes y laboratory para gestionar el resultado de los análisis. A nivel de DAL, solo fue necesario crear el componente de Laboratory.
 
 ## Tecnología
 La solución se ha construido utilizando:
@@ -86,10 +90,10 @@ API Rest 2.1,
 Microsoft Azure Services,
 SQL Server 13.0
 
-¿Por que se decidió utilizar tecnologias microsoft? R:/ Por velocidad de desarrollo.
+¿Por qué se decidió utilizar tecnologías microsoft? R:/ Por velocidad de desarrollo.
 
 ## Posibles mejoras
 * Implementar un logger para registrar y monitorear eventos.
 * Realizar pruebas de cargar para monitorizar el comportamiento del rest api.
-* Implementar ax. de infraestructura para alto volumen de trafico.
+* Implementar ax. de infraestructura para alto volumen de tráfico.
 * Generar documentación técnica diagramas de componentes, clases y distribución.
