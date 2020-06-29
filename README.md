@@ -43,6 +43,7 @@ Adicionalmente, se ha expuesto el siguiente recurso para retornar detalles del a
 POST: https://brainservicesapi20200629110951.azurewebsites.net/api/laboratory
 
 El resultado de este analisis se presenta de la siguiente forma:
+
 {
     "IsMutant": true,
     "MutantSequences": [
