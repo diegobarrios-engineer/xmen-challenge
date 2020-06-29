@@ -59,4 +59,5 @@ SQL Server 13.0
 
 ## Posibles mejoras
 * Implementar un logger para registrar y monitorear eventos.
-* Diseñar arquitectura de infraestructura para alto volumen de trafico.
+* Implementar ax. de infraestructura para alto volumen de trafico.
+* Generar documentación técnica diagramas de componentes, clases y distribución.
