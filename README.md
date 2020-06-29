@@ -10,5 +10,3 @@ En donde recibirás como parámetro un array de Strings que representan cada fil
 Ejemplo (Caso mutante):
 String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"}; 
 //En este caso el llamado a la función isMutant(dna) devuelve “true”
-
-
